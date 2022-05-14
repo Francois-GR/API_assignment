@@ -1,0 +1,22 @@
+{
+  "name": "assignment_1",
+  "version": "1.0.0",
+  "description": "assignment ",
+  "main": "app.js",
+  "scripts": {
+    "startMenu": "node ./app.js",
+    "server": "nodemon app.js"
+    
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "node-fetch": "^3.2.4",
+    "node-spotify-api": "^1.1.1",
+    "spotify": "^0.3.0",
+    "spotify-web-api-node": "^5.0.2",
+    "twit": "^2.2.11",
+    "twitter-api-v2": "^1.12.0"
+  }
+}
