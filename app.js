@@ -92,11 +92,8 @@ function interpretInput(input){
                    }
                }).then((results)=>{
                   
-                        console.log(results);
-                    
-                    // else{
-                    //     console.log('no movies found')
-                    // }
+                        console.log(results);                    
+                   
                 main()
                }).catch((err)=>{
                    console.log(err);
