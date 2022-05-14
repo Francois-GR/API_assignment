@@ -1,3 +1,4 @@
+const lookUpMovies = require('./OMDB')
 const spotifyLookUp = require('./Spotify')
 const twitter = require('./twitterAPI')// import custom twitter module
 const readline = require('readline').createInterface({
@@ -58,22 +59,50 @@ function interpretInput(input){
            break;
         case 2:
             //spotify
-            readline.question('enter the song name, ex money trees: ', song=>{
+            readline.question('enter the song name, ex: money trees: ', song=>{
+                if(song){
                 spotifyLookUp(song).then((d)=>{
                     new Promise((res,rej)=>{
                         console.log(d);
                     }
                     ).then(
                         main()
-                    )()
+                    )
                 }                 
                 )
+            }
+            else{
+                console.log('enter song name');
+                interpretInput(2)
+            }
                 
             })
 
             break;
         case 3:
             //OMDB
+            readline.question('enter a movie name,  ex: Rock of Ages: ', movie=>{
+               new Promise((res,rej)=>{
+                   if(movie){
+                   let results = lookUpMovies(movie)
+                   res(results)
+                   }
+                   else{
+                       rej('enter movie name')
+                   }
+               }).then((results)=>{
+                  
+                        console.log(results);
+                    
+                    // else{
+                    //     console.log('no movies found')
+                    // }
+                main()
+               }).catch((err)=>{
+                   console.log(err);
+                   interpretInput(3)
+               })
+            })
             break;
         case 4:
             //read from textfile      

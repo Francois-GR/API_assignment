@@ -6,13 +6,12 @@
   "scripts": {
     "startMenu": "node ./app.js",
     "server": "nodemon app.js"
-    
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.1",
-    "node-fetch": "^3.2.4",
+    "node-fetch": "^2.6.7",
     "node-spotify-api": "^1.1.1",
     "spotify": "^0.3.0",
     "spotify-web-api-node": "^5.0.2",
