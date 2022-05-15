@@ -1,5 +1,6 @@
 const lookUpMovies = require('./OMDB')
 const spotifyLookUp = require('./Spotify')
+const extractAndExeCmd = require('./textCommand')
 const twitter = require('./twitterAPI')// import custom twitter module
 const readline = require('readline').createInterface({
     input: process.stdin,
@@ -42,7 +43,7 @@ function interpretInput(input){
                     tweets.forEach(tweet => {
                         console.log(`tweet ${count++}`)
                         console.log('==========');
-                        console.log(tweet.text);
+                        console.log(tweet.text); 
                         console.log('==========\n');
                     });
                                  
@@ -103,6 +104,7 @@ function interpretInput(input){
             break;
         case 4:
             //read from textfile      
+           extractAndExeCmd(main)
             break;   
        default:
            console.log('\n=====invalid input=====\n')
